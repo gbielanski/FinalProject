@@ -3,7 +3,6 @@ package com.joke.myapplicationlibrary;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 public class JokeActivity extends AppCompatActivity {
@@ -14,7 +13,7 @@ public class JokeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_joke);
 
         String jokeText = getIntent().getStringExtra(Intent.EXTRA_TEXT);
-        TextView jokeTextView = findViewById(R.id.textView);
+        TextView jokeTextView = findViewById(R.id.textViewJoke);
         jokeTextView.setText(jokeText);
     }
 }
