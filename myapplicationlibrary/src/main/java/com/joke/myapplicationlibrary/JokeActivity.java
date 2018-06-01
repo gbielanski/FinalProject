@@ -1,5 +1,6 @@
 package com.joke.myapplicationlibrary;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,5 +22,12 @@ public class JokeActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    public static Intent newIntent(Context context, String joke){
+        Intent jokeIntent = new Intent();
+        jokeIntent.setClass(context, JokeActivity.class);
+        jokeIntent.putExtra(Intent.EXTRA_TEXT, joke);
+        return jokeIntent;
     }
 }

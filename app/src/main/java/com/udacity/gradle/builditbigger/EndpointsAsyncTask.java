@@ -53,9 +53,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, SimpleIdlingResource>, 
         // Null at production
         if (idlingResource != null)
             idlingResource.setIdleState(true);
-        Intent jokeIntent = new Intent();
-        jokeIntent.setClass(context, JokeActivity.class);
-        jokeIntent.putExtra(Intent.EXTRA_TEXT, joke);
+        Intent jokeIntent = JokeActivity.newIntent(context, joke);
 
         if (jokeIntent.resolveActivity(context.getPackageManager()) != null) {
             context.startActivity(jokeIntent);
